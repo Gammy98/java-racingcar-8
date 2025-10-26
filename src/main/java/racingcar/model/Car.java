@@ -12,10 +12,10 @@ public class Car {
 
     private void validateName(String name) {
         if (isNameBlank(name)) {
-            throw new IllegalArgumentException(errorMessage + "자동차 이름은 비어 있을 수 없습니다.");
+            throw new IllegalArgumentException(ERROR_MESSAGE + "자동차 이름은 비어 있을 수 없습니다.");
         }
         if (isNameTooLong(name)){
-            throw new IllegalArgumentException(errorMessage + "자동차 이름은 5글자를 초과할 수 없습니다.");
+            throw new IllegalArgumentException(ERROR_MESSAGE + "자동차 이름은 5글자를 초과할 수 없습니다.");
         }
     }
 
@@ -24,7 +24,7 @@ public class Car {
     }
 
     private boolean isNameTooLong(String name) {
-        return name.trim().length() > maxNameLength;
+        return name.trim().length() > MAX_NAME_LENGTH;
     }
 }
 
