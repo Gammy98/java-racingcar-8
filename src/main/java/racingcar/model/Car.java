@@ -26,5 +26,9 @@ public class Car {
     private boolean isNameTooLong(String name) {
         return name.trim().length() > MAX_NAME_LENGTH;
     }
+
+    public String getName(){
+        return name;
+    }
 }
 
