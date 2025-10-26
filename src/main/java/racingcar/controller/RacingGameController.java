@@ -8,3 +8,4 @@ public class RacingGameController {
         String carNameInput = InputView.readCarName();
     }
 }
+
