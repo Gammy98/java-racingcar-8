@@ -10,8 +10,8 @@
 <br>
 
 ## 2. 유효성 검사 기능
-- [ ] 입력된 자동차 이름이 5자를 초과하는 경우 IllegalArgumentException 발생
-- [ ] 입력된 자동차 이름이 비어있거나, 공백만 있는경우 IllegalArgumentException 발생
+- [x] 입력된 자동차 이름이 5자를 초과하는 경우 IllegalArgumentException 발생
+- [x] 입력된 자동차 이름이 비어있거나, 공백만 있는경우 IllegalArgumentException 발생
 - [ ] 시도할 횟수의 숫자가 숫자가 아니거나 1 미만의 숫자일 경우 IllegalArgumentException 발생
 - [ ] 시도할 횟수의 숫자가 공백으로 들어오는 경우 IllegalException 발생
 <br>

@@ -1,8 +1,8 @@
 package racingcar.model;
 
 public class Car {
-    private static final int maxNameLength = 5;
-    private static final String errorMessage = "ERROR : " ;
+    private static final int MAX_NAME_LENGTH = 5;
+    private static final String ERROR_MESSAGE = "ERROR : " ;
     private final String name;
 
     public Car(String name){
