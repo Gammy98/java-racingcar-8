@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 public class CarsTest {
 
@@ -44,5 +43,36 @@ public class CarsTest {
         assertThatThrownBy(() -> new Cars(inputWithBlankName))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차 이름은 비어 있을 수 없습니다.");
+    }
+
+    @Test
+    @DisplayName("자동차 1대가 가장 앞에 있는 경우 이름 반환")
+    void single_winner(){
+        Cars cars = new Cars("pobi,woni,jun");
+        List<Car> carList = cars.getCars();
+
+        carList.get(0).move(5);
+        carList.get(0).move(6);
+        carList.get(1).move(3);
+        carList.get(2).move(2);
+
+        List<String> winners = cars.findWinners();
+        assertThat(winners).containsExactly("pobi");
+    }
+
+    @Test
+    @DisplayName("자동차 여러대가 같은 거리만큼 이동한 경우 공동우승처리 하고 이름 모두 반환")
+    void many_winner(){
+        Cars cars = new Cars("pobi,woni,jun");
+        List<Car> carList = cars.getCars();
+
+        carList.get(0).move(2);
+        carList.get(0).move(5);
+        carList.get(1).move(2);
+        carList.get(2).move(5);
+        carList.get(2).move(3);
+
+        List<String> winners = cars.findWinners();
+        assertThat(winners).containsExactlyInAnyOrder("pobi", "jun");
     }
 }
