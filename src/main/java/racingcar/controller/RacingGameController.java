@@ -6,6 +6,8 @@ import racingcar.model.TryCount;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
+import java.util.List;
+
 public class RacingGameController {
 
     private final OutputView outputView;
@@ -28,7 +30,8 @@ public class RacingGameController {
 
         runRace(cars, tryCount);
 
-        //TODO : 최종 우승자 구하는 로직
+        List<String> winners = cars.findWinners();
+        outputView.printWinners(winners);
     }
 
     private void runRace(Cars cars, TryCount tryCount) {
