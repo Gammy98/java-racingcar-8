@@ -1,12 +1,18 @@
 package racingcar.controller;
 
 import org.junit.platform.commons.function.Try;
-import racingcar.model.Car;
 import racingcar.model.Cars;
 import racingcar.model.TryCount;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class RacingGameController {
+
+    private final OutputView outputView;
+
+    public RacingGameController(){
+        this.outputView = new OutputView();
+    }
 
     public void play(){
         try {
@@ -20,7 +26,19 @@ public class RacingGameController {
         Cars cars = getCarsFromUser();
         TryCount tryCount = getTryCountFromUser();
 
-        //TODO : 게임 로직 구현
+        runRace(cars, tryCount);
+
+        //TODO : 최종 우승자 구하는 로직
+    }
+
+    private void runRace(Cars cars, TryCount tryCount) {
+        outputView.printExecutionResultHeader();
+
+        //모든 차 이동 후 결과 출력
+        for (int i = 0; i < tryCount.getCount(); i++) {
+            cars.moveAll();
+            outputView.printRoundResult(cars);
+        }
     }
 
     private Cars getCarsFromUser(){

@@ -23,4 +23,10 @@ public class Cars {
     public List<Car> getCars(){
         return cars;
     }
+
+    public void moveAll(){
+        for (Car car:cars){
+            car.move();
+        }
+    }
 }
