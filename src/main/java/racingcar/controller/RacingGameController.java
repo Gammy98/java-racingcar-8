@@ -17,11 +17,7 @@ public class RacingGameController {
     }
 
     public void play(){
-        try {
-            playGame();
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+        playGame();
     }
 
     private void playGame(){
