@@ -30,7 +30,7 @@ public class OutputView {
     }
 
     public void printWinners(List<String> winners) {
-        String winnerNames = String.join(WINNER_NAME_SEPARATOR + winners);
+        String winnerNames = String.join(WINNER_NAME_SEPARATOR , winners);
         System.out.println(WINNER_HEADER + winnerNames);
     }
 }
